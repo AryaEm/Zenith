@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bgPrimaryColor {
+  background-color: #212A3E;
+}
+
+.bgSidebar {
+  background-color: #425267;
+}
+
+.gradLine {
+  background: linear-gradient(to right, transparent, white, transparent);
+}
