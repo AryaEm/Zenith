@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { TiHome } from "react-icons/ti";
 import { RiGamepadFill } from "react-icons/ri";
@@ -18,7 +19,7 @@ export default function Sidebar() {
     }
 
     return (
-        <div className="p-3 h-dvh w-[20%] ">
+        <div className="p-3 h-dvh w-[80%] xl:w-[20%] ">
             <div onClick={toggleSidebar} className="burgerMenu absolute z-10 left-4 top-4 bg-slate-950 h-12 w-12 rounded-2xl flex flex-col items-center justify-center gap-1 cursor-pointer shadow-[0_0_4px_rgba(8,_112,_184,_0.4)]  ">
                 <div className="h-[1.9px] rounded-xl w-5 bg-slate-200"></div>
                 <div className="h-[1.9px] rounded-xl w-5 bg-slate-200"></div>
@@ -29,28 +30,28 @@ export default function Sidebar() {
                 isSidebarVisible ? "translate-x-0" : "-translate-x-96"
             } `}>
                 <div className="px-10 pt-16 ">
-                    <h2 className="text-[28px] font-bold">Zenith</h2>
+                    <h2 className="text-[28px] font-bold text-white">Zenith</h2>
                 </div>
 
                 <div className="h-[1.5px] gradLine w-full my-8"></div>
 
                 <div className="flex flex-col pl-10 h-full ">
-                    <a href="" className="text-white hover:text-[#212A3E] bg-opacity-0 hover:bg-slate-400 hover:bg-opacity-60 transition-all duration-300 font-semibold rounded-lg my-2 px-6 py-3 w-44 flex gap-2 items-start" >
+                    <Link href="dashboard" className="text-white hover:text-[#212A3E] bg-opacity-0 hover:bg-slate-400 hover:bg-opacity-60 transition-all duration-300 font-semibold rounded-lg my-2 px-6 py-3 w-44 flex gap-2 items-start" >
                         <TiHome className="text-[22px] w-5 h-5" /> Dashboard
-                    </a>
-                    <a href="" className="text-white hover:text-[#212A3E] bg-opacity-0 hover:bg-slate-400 hover:bg-opacity-60 transition-all duration-300 font-semibold rounded-lg my-2 px-6 py-3 w-44 flex gap-2 items-center" >
+                    </Link>
+                    <Link href="" className="text-white hover:text-[#212A3E] bg-opacity-0 hover:bg-slate-400 hover:bg-opacity-60 transition-all duration-300 font-semibold rounded-lg my-2 px-6 py-3 w-44 flex gap-2 items-center" >
                         <RiGamepadFill className="text-[22px] w-5 h-5" /> Game
-                    </a>
-                    <a href="" className="text-white hover:text-[#212A3E] bg-opacity-0 hover:bg-slate-400 hover:bg-opacity-60 transition-all duration-300 font-semibold rounded-lg my-2 px-6 py-3 w-44 flex gap-2 items-center" >
+                    </Link>
+                    <Link href="order" className="text-white hover:text-[#212A3E] bg-opacity-0 hover:bg-slate-400 hover:bg-opacity-60 transition-all duration-300 font-semibold rounded-lg my-2 px-6 py-3 w-44 flex gap-2 items-center" >
                         <FaShoppingBasket className="text-[22px] w-5 h-5" /> Order
-                    </a>
-                    <a href="" className="text-white hover:text-[#212A3E] bg-opacity-0 hover:bg-slate-400 hover:bg-opacity-60 transition-all duration-300 font-semibold rounded-lg my-2 px-6 py-3 w-44 flex gap-2 items-center" >
+                    </Link>
+                    <Link href="" className="text-white hover:text-[#212A3E] bg-opacity-0 hover:bg-slate-400 hover:bg-opacity-60 transition-all duration-300 font-semibold rounded-lg my-2 px-6 py-3 w-44 flex gap-2 items-center" >
                         <IoGameController className="text-[22px] w-5 h-5" /> My Game
-                    </a>
+                    </Link>
                     <a href="" className="text-white hover:text-[#212A3E] bg-opacity-0 hover:bg-slate-400 hover:bg-opacity-60 transition-all duration-300 font-semibold rounded-lg my-2 px-6 py-3 w-44 flex gap-2 items-center" >
                         <FaHistory className="text-[22px] w-5 h-5" /> History
                     </a>
-                </div>
+                </div>  
 
                 <div className="h-[1.5px] gradLine w-full my-6"></div>
 
@@ -66,4 +67,3 @@ export default function Sidebar() {
         </div>
     );
 }
-

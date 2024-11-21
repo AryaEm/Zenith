@@ -1,4 +1,5 @@
-@import url('https://fonts.cdnfonts.com/css/broadmen');
+@import url("https://fonts.cdnfonts.com/css/broadmen");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +7,11 @@
 
 @layer base {
   .broadmen {
-      font-family: 'Broadmen', sans-serif;
+    font-family: "Broadmen", sans-serif;
+  }
+
+  .gummy {
+    font-family: "Sour Gummy", sans-serif;
   }
 }
 
@@ -30,11 +35,26 @@ body {
 
 @layer utilities {
   .bgPrimaryColor {
-    background-image: 
-    radial-gradient(circle at center center, rgba(33, 33, 33, 0), rgb(35, 35, 35)),
-    repeating-linear-gradient(135deg, rgb(35, 35, 35) 0px, rgb(35, 35, 35) 1px, transparent 1px, transparent 4px),
-    repeating-linear-gradient(45deg, rgb(34, 56, 85) 0px, rgb(34, 56, 85) 5px, transparent 5px, transparent 6px),
-    linear-gradient(90deg, rgb(35, 35, 35), rgb(35, 35, 35));
+    background-image: radial-gradient(
+        circle at center center,
+        rgba(33, 33, 33, 0),
+        rgb(35, 35, 35)
+      ),
+      repeating-linear-gradient(
+        135deg,
+        rgb(35, 35, 35) 0px,
+        rgb(35, 35, 35) 1px,
+        transparent 1px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        45deg,
+        rgb(34, 56, 85) 0px,
+        rgb(34, 56, 85) 5px,
+        transparent 5px,
+        transparent 6px
+      ),
+      linear-gradient(90deg, rgb(35, 35, 35), rgb(35, 35, 35));
   }
 }
 
@@ -53,7 +73,9 @@ body {
 
 .gausianBlur {
   --tw-blur: blur(100px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .gradLine {
@@ -66,4 +88,8 @@ body {
 
 .textStroke {
   -webkit-text-stroke: 4px white;
+}
+
+.backdrop {
+  backdrop-filter: blur(10px);
 }
