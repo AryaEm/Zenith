@@ -1,12 +1,10 @@
-import { ReactNode } from "react"
-
 interface IPropMenu {
     id: string,
     path: string,
     label: string,
 }
 
-let MenuList: IPropMenu[] = [
+const MenuList: IPropMenu[] = [
     {
         id: `dashboard`,
         path: `/`,

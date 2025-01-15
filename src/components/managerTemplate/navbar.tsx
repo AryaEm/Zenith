@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode, useState } from "react"
+import { ReactNode} from "react"
 // import Image from "next/image"
 import MenuItem from "./menuItem"
 import { IoSearchOutline } from "react-icons/io5";
@@ -18,12 +18,12 @@ type ManagerProp = {
     menuList: MenuType[]
 }
 
-export default function Navbar({ id, title, children, menuList }: ManagerProp) {
-    const [isSidebarVisible, setSidebarVisible] = useState(false)
+export default function Navbar({ children, menuList }: ManagerProp) {
+    // const [isSidebarVisible, setSidebarVisible] = useState(false)
 
-    const toggleSidebar = () => {
-        setSidebarVisible(!isSidebarVisible)
-    }
+    // const toggleSidebar = () => {
+    //     setSidebarVisible(!isSidebarVisible)
+    // }
 
     return (
         <>
@@ -66,7 +66,6 @@ export default function Navbar({ id, title, children, menuList }: ManagerProp) {
                                 <MenuItem
                                     label={menu.label}
                                     path={menu.path}
-                                    active={menu.id === id}
                                     key={`keyMenu${index}`} />
                             ))
                         }

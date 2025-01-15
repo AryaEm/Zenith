@@ -7,7 +7,7 @@ interface MenuItemProps {
     active?: boolean;
 }
 
-export default function MenuItem({ label, path, active }: MenuItemProps) {
+export default function MenuItem({ label, path }: MenuItemProps) {
     return (
         <Link href={path} className={`flex items-center p-3 px-4 text-[#262626] hover:text-000000`}>
             <span className="flex-1 font-medium text-lg">{label}</span>
