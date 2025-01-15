@@ -1,0 +1,160 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+@import url("https://fonts.cdnfonts.com/css/playfair-display");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.primary {
+  background-color: #007aff;
+}
+
+.textprimary {
+  color: #007aff;
+}
+
+.textblack {
+  color: #262626;
+}
+
+.sfprodisplay {
+  font-family: "SF Pro Display", sans-serif;
+}
+
+.playfair {
+  font-family: "Playfair Display", sans-serif;
+}
+
+@layer utilities {
+  .bgPrimaryColor {
+    background-image: linear-gradient(
+        22.5deg,
+        rgb(148, 148, 148) 0%,
+        rgb(148, 148, 148) 3%,
+        rgb(132, 132, 132) 3%,
+        rgb(132, 132, 132) 16%,
+        rgb(117, 117, 117) 16%,
+        rgb(117, 117, 117) 26%,
+        rgb(101, 101, 101) 26%,
+        rgb(101, 101, 101) 29%,
+        rgb(85, 85, 85) 29%,
+        rgb(85, 85, 85) 65%,
+        rgb(70, 70, 70) 65%,
+        rgb(70, 70, 70) 89%,
+        rgb(54, 54, 54) 89%,
+        rgb(54, 54, 54) 100%
+      ),
+      linear-gradient(
+        130deg,
+        rgb(148, 148, 148) 0%,
+        rgb(148, 148, 148) 3%,
+        rgb(132, 132, 132) 3%,
+        rgb(132, 132, 132) 16%,
+        rgb(117, 117, 117) 16%,
+        rgb(117, 117, 117) 26%,
+        rgb(101, 101, 101) 26%,
+        rgb(101, 101, 101) 29%,
+        rgb(85, 85, 85) 29%,
+        rgb(85, 85, 85) 65%,
+        rgb(70, 70, 70) 65%,
+        rgb(70, 70, 70) 89%,
+        rgb(54, 54, 54) 89%,
+        rgb(54, 54, 54) 100%
+      ),
+      linear-gradient(
+        112.5deg,
+        rgb(148, 148, 148) 0%,
+        rgb(148, 148, 148) 3%,
+        rgb(132, 132, 132) 3%,
+        rgb(132, 132, 132) 16%,
+        rgb(117, 117, 117) 16%,
+        rgb(117, 117, 117) 26%,
+        rgb(101, 101, 101) 26%,
+        rgb(101, 101, 101) 29%,
+        rgb(85, 85, 85) 29%,
+        rgb(85, 85, 85) 65%,
+        rgb(70, 70, 70) 65%,
+        rgb(70, 70, 70) 89%,
+        rgb(54, 54, 54) 89%,
+        rgb(54, 54, 54) 100%
+      ),
+      linear-gradient(
+        85deg,
+        rgb(148, 148, 148) 0%,
+        rgb(148, 148, 148) 3%,
+        rgb(132, 132, 132) 3%,
+        rgb(132, 132, 132) 16%,
+        rgb(117, 117, 117) 16%,
+        rgb(117, 117, 117) 26%,
+        rgb(101, 101, 101) 26%,
+        rgb(101, 101, 101) 29%,
+        rgb(85, 85, 85) 29%,
+        rgb(85, 85, 85) 65%,
+        rgb(70, 70, 70) 65%,
+        rgb(70, 70, 70) 89%,
+        rgb(54, 54, 54) 89%,
+        rgb(54, 54, 54) 100%
+      ),
+      linear-gradient(175deg, rgb(96, 96, 96), rgb(18, 19, 26));
+    background-blend-mode: overlay, overlay, overlay, overlay, normal;
+  }
+}
+
+.bgSidebar {
+  background-color: #484848bb;
+  backdrop-filter: blur(20px);
+}
+
+.custom-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+}
+
+.nav-shadow {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none; /* Untuk Firefox */
+  -ms-overflow-style: none; /* Untuk Internet Explorer 10+ */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Untuk Chrome, Safari, dan Edge */
+}
+
+.blue-bg {
+  background-image: radial-gradient(
+      circle at 32% 12%,
+      rgba(229, 229, 229, 0.05) 0%,
+      rgba(229, 229, 229, 0.05) 50%,
+      rgba(101, 101, 101, 0.05) 50%,
+      rgba(101, 101, 101, 0.05) 100%
+    ),
+    radial-gradient(
+      circle at 49% 59%,
+      rgba(113, 113, 113, 0.05) 0%,
+      rgba(113, 113, 113, 0.05) 50%,
+      rgba(240, 240, 240, 0.05) 50%,
+      rgba(240, 240, 240, 0.05) 100%
+    ),
+    radial-gradient(
+      circle at 16% 86%,
+      rgba(118, 118, 118, 0.05) 0%,
+      rgba(118, 118, 118, 0.05) 50%,
+      rgba(207, 207, 207, 0.05) 50%,
+      rgba(207, 207, 207, 0.05) 100%
+    ),
+    linear-gradient(252deg, rgb(0, 122, 255), rgb(0, 122, 255));
+}
+
+.game-category-shadow {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
