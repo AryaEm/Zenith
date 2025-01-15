@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import MenuList from "./admin/menuList";
+import ManagerTemplate from "@/components/managerTemplate";
 
 export const metadata: Metadata = {
   title: "Zenith",
@@ -14,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <ManagerTemplate title="Dashboard" id="dashboard" menuList={MenuList}>
+          {children}
+        </ManagerTemplate>
       </body>
     </html>
   );

@@ -1,8 +1,16 @@
+import Header from "@/components/managerTemplate/header"
+import RecommendedFeature from "@/components/managerTemplate/recommended-feature"
+import SpecialOffers from "@/components/managerTemplate/special-offers"
+import GameCategory from "@/components/managerTemplate/game-category"
+
 const DashboardPage = () => {
-  return (
-    <div className="flex w-full h-dvh bg-black justify-center">
-      <h1 className="text-white font-semibold text-3xl">Dashboard</h1>
-    </div>
-  )
+    return (
+        <div className="">
+            <Header></Header>
+            <RecommendedFeature></RecommendedFeature>
+            <SpecialOffers></SpecialOffers>
+            <GameCategory></GameCategory>
+        </div>
+    )
 }
 export default DashboardPage

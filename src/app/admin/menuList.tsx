@@ -9,7 +9,7 @@ interface IPropMenu {
 let MenuList: IPropMenu[] = [
     {
         id: `dashboard`,
-        path: `/admin/dashboard`,
+        path: `/`,
         label: `Dashboard`,
     },
     {
