@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode, useState, useEffect } from "react"
+import { ReactNode } from "react"
 // import Image from "next/image"
 import MenuItem from "./menuItem"
 import { IoSearchOutline } from "react-icons/io5";

@@ -19,7 +19,7 @@ const FAQ = () => {
                 <h2 className="text-3xl font-bold sfprodisplay tracking-wide text-center">Frequently Asked <br />Questions</h2>
             </div>
 
-            <div className="flex w-4/5 gap-8">
+            <div className="flex w-4/5 gap-8 relative">
                 <div className="w-1/2 h-fit my-10 grid grid-cols-1 md:grid gap-8 ">
                     {faqItems1.map((item, index) => (
                         <FAQItem key={index} question={item.question} answer={item.answer} />
@@ -27,7 +27,7 @@ const FAQ = () => {
                 </div>
 
                 <div className="w-1/2 h-fit my-10 grid grid-cols-1 md:grid gap-8 ">
-                    {faqItems1.map((item, index) => (
+                    {faqItems2.map((item, index) => (
                         <FAQItem key={index} question={item.question} answer={item.answer} />
                     ))}
                 </div>

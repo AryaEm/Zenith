@@ -1,5 +1,5 @@
 // components/SocialLinks.tsx
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaInstagram} from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 
 const SocialLinks = () => {

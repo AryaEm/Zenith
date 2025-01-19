@@ -34,7 +34,7 @@ const SignInPage = () => {
                 storeCookie("username", data.data.name)
                 storeCookie("role", data.data.role)
                 storeCookie("no_telp", data.data.no_telp)
-                let role = data.data.role
+                const role = data.data.role
                 if (role === `Admin`) setTimeout(() => router.replace(`/`), 300)
                 else if (role === `Pelanggan`) setTimeout(() => router.replace(`/cashier/dashboard`), 300)
             }
