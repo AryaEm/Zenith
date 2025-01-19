@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode} from "react"
+import { ReactNode, useState, useEffect } from "react"
 // import Image from "next/image"
 import MenuItem from "./menuItem"
 import { IoSearchOutline } from "react-icons/io5";
@@ -20,10 +20,17 @@ type ManagerProp = {
 
 export default function Navbar({ children, menuList }: ManagerProp) {
     // const [isSidebarVisible, setSidebarVisible] = useState(false)
+    // const [inLoginPage, setInLoginPage] = useState("false")
 
     // const toggleSidebar = () => {
     //     setSidebarVisible(!isSidebarVisible)
     // }
+
+    // useEffect(() => {
+    //     setInLoginPage(localStorage.getItem("inLoginPage") === "true" ? "true" : "false")
+    //     console.log(localStorage.getItem("inLoginPage") === "true" ? "true" : "false")
+    // }, [])
+
 
     return (
         <>
@@ -34,13 +41,13 @@ export default function Navbar({ children, menuList }: ManagerProp) {
             </div> */}
 
 
-            <div className="flex items-center fixed z-[999] w-full h-16 justify-center bg-white">
+            <div className="flex items-center fixed z-[999] w-full h-16 justify-center bg-[#fcfcfc]">
 
                 {/* logo section */}
                 <div className="w-fit ml-14 p-2 flex items-center gap-3">
                     <div className="bg-slate-400 w-8 h-8"></div>
                     <div className="border-green-800 flex items-center">
-                        <p className="text-[262626] font-semibold playfair text-3xl">Zenith</p>
+                        <p className="text-[262626] font-semibold playfair text-3xl">Zenith</p>)
                     </div>
                 </div>
                 {/* end logo section */}
@@ -72,10 +79,10 @@ export default function Navbar({ children, menuList }: ManagerProp) {
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <Link href={''} className="flex items-center px-4 font-medium text-[#262626] ">
+                        <Link href={'/login'} className="flex items-center px-4 font-medium text-[#262626] ">
                             <span>Sign Up</span>
                         </Link>
-                        <Link href={''} className="flex items-center px-4 font-medium p-2 text-white primary rounded-lg">
+                        <Link href={'/login'} className="flex items-center px-4 font-medium p-2 text-white primary rounded-lg">
                             <span>Sign In</span>
                         </Link>
                     </div>

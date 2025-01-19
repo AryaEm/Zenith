@@ -1,5 +1,5 @@
 "use client"
-import { ReactNode } from "react"
+import { ReactNode, useState } from "react"
 import Navbar from "./navbar"
 
 type MenuType = {
@@ -15,8 +15,9 @@ type ManagerProp = {
 }
 
 export default function ManagerTemplate({ children, id, title, menuList }: ManagerProp) {
+    
     return (
-        <div className="w-full min-h-dvh">
+        <div className="w-full min-h-dvh bg-[#fcfcfc]">
             <Navbar menuList={menuList} title={title} id={id}>
                 {children}
             </Navbar>
