@@ -61,7 +61,7 @@ const SignInPage = () => {
                         <div className="w-full md:w-6/12 xl:w-2/5 h-dvh p-5 flex flex-col items-center justify-center relative">
                             <div className="w-3/4">
                                 <div className="absolute bottom-0 left-0 w-full py-3 text-center">
-                                    <small className="text-zinc-200">Copyright @2024</small>
+                                    <small className="text-zinc-200">Copyright &copy; 2024</small>
                                 </div>
                                 <Image alt="moklet-app" src={inilogo} className="h-20 w-20 my-" priority />
                                 <h4 className="text-3xl font-semibold text-white mb-2 sfprodisplay tracking-wider">Welcome Back<span className="text-[#007AFF]">.</span></h4>
