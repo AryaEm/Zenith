@@ -67,7 +67,7 @@ const SignInPage = () => {
                                 <h4 className="text-3xl font-semibold text-white mb-2 sfprodisplay tracking-wider">Welcome Back<span className="text-[#007AFF]">.</span></h4>
                                 <span className="text-sm text-white text-opacity-70 font-normal text-center">
                                     <span className="text-sm text-white text-opacity-70 font-normal text-center">
-                                        Don't have an account? <Link href={'/signup'} className="font-bold text-[#007AFF]">SignUp</Link>
+                                        Don&apos;t have an account? <Link href={'/signup'} className="font-bold text-[#007AFF]">SignUp</Link>
                                     </span>
                                 </span>
                             </div>
