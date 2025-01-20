@@ -93,8 +93,8 @@
 .grad-login {
   background: rgb(39, 42, 55);
   background: linear-gradient(
-    130deg,
-    rgba(39, 42, 55, 1) 35%,
+    80deg,
+    rgba(39, 42, 55, 1) 45%,
     rgba(39, 42, 55, 0.61) 95%
   );
 }

@@ -8,10 +8,12 @@ import { useRouter } from "next/navigation"
 import { FormEvent, useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
 import inilogo from "../../../public/image/among-us-6044191_960_720.webp"
-import { FaUserNinja } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+// import { FaUserNinja } from "react-icons/fa";
 import { FaLock } from "react-icons/fa6";
 import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
+import Link from "next/link"
 
 const SignInPage = () => {
     const [email, setEmail] = useState<string>("")
@@ -48,15 +50,6 @@ const SignInPage = () => {
         }
     }
 
-    // function redirect() {
-    //     localStorage.setItem("inLoginPage", "false")
-    //     router.push("/")
-    // }
-
-    // useEffect(() => {
-    //     localStorage.setItem("inLoginPage", "true")
-    // }, [])
-
     return (
         <>
             <div className="w-screen h-screen bg-login bg-cover">
@@ -70,20 +63,21 @@ const SignInPage = () => {
                                 <div className="absolute bottom-0 left-0 w-full py-3 text-center">
                                     <small className="text-zinc-200">Copyright @2024</small>
                                 </div>
-                                <Image alt="moklet-app" src={inilogo}
-                                    className="h-20 w-20 my-2 " />
-                                <h4 className="text-3xl font-semibold text-white mb-2 sfprodisplay tracking-wider">Zenith<span className="text-teal-300">.</span></h4>
+                                <Image alt="moklet-app" src={inilogo} className="h-20 w-20 my-" priority />
+                                <h4 className="text-3xl font-semibold text-white mb-2 sfprodisplay tracking-wider">Welcome Back<span className="text-[#007AFF]">.</span></h4>
                                 <span className="text-sm text-white text-opacity-70 font-normal text-center">
-                                    Welcome
+                                    <span className="text-sm text-white text-opacity-70 font-normal text-center">
+                                        Don't have an account? <Link href={'/signup'} className="font-bold text-[#007AFF]">SignUp</Link>
+                                    </span>
                                 </span>
                             </div>
 
                             <form onSubmit={handleSubmit} className="w-3/4 my-10 ">
                                 <div className="flex w-full my-4">
                                     <div className="bg-[#323644] rounded-l-md p-3 flex items-center justify-center">
-                                        <FaUserNinja className="text-zinc-200"></FaUserNinja>
+                                        <IoMdMail className="text-zinc-200"></IoMdMail>
                                     </div>
-                                    <input type="text" className="bg-[#323644] text-zinc-200 p-3 grow rounded-r-md focus:outline-none focus:ring-[#323644]" value={email}
+                                    <input type="text" className="bg-[#323644] text-zinc-200 p-3 grow rounded-r-md focus:outline-none" value={email}
                                         onChange={e => setEmail(e.target.value)} placeholder="Email" id={`email`} />
                                 </div>
 
@@ -92,7 +86,7 @@ const SignInPage = () => {
                                     <div className="bg-[#323644] rounded-l-md p-3 flex items-center justify-center">
                                         <FaLock className="text-zinc-200"></FaLock>
                                     </div>
-                                    <input type={showPassword ? `text` : `password`} className="p-3 grow bg-[#323644] text-zinc-200 focus:outline-none focus:ring-teal-300" value={password}
+                                    <input type={showPassword ? `text` : `password`} className="p-3 grow bg-[#323644] text-zinc-200 focus:outline-none" value={password}
                                         onChange={e => setPassword(e.target.value)} placeholder="Password" id={`password-industri-app`} />
                                     <div className="cursor-pointer bg-[#323644] rounded-r-md px-3 flex items-center justify-center" onClick={() => setShowPassword(!showPassword)}>
                                         {
@@ -105,7 +99,7 @@ const SignInPage = () => {
 
 
                                 <div className="my-10">
-                                    <button type="submit" className="bg-teal-300 hover:bg-primary uppercase w-full p-2 font-semibold rounded-md text-white">
+                                    <button type="submit" className="bg-[#007AFF] hover:bg-primary w-full p-2 font-semibold rounded-md text-white">
                                         Login
                                     </button>
                                 </div>

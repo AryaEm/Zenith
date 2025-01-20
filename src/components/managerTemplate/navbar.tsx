@@ -5,6 +5,8 @@ import { ReactNode } from "react"
 import MenuItem from "./menuItem"
 import { IoSearchOutline } from "react-icons/io5";
 import Link from "next/link";
+import { removeCookie } from "@/lib/client-cookie"
+import { useRouter } from "next/navigation";
 
 type MenuType = {
     id: string,
@@ -19,6 +21,16 @@ type ManagerProp = {
 }
 
 export default function Navbar({ children, menuList }: ManagerProp) {
+    const router = useRouter()
+
+    const handleLogout = () => {
+        removeCookie("token")
+        removeCookie("id")
+        removeCookie("name")
+        removeCookie("role")
+        router.replace(`/login`)
+    };
+
     // const [isSidebarVisible, setSidebarVisible] = useState(false)
     // const [inLoginPage, setInLoginPage] = useState("false")
 
@@ -47,7 +59,7 @@ export default function Navbar({ children, menuList }: ManagerProp) {
                 <div className="w-fit ml-14 p-2 flex items-center gap-3">
                     <div className="bg-slate-400 w-8 h-8"></div>
                     <div className="border-green-800 flex items-center">
-                        <p className="text-[262626] font-semibold playfair text-3xl">Zenith</p>)
+                        <p className="text-[262626] font-semibold playfair text-3xl">Zenith</p>
                     </div>
                 </div>
                 {/* end logo section */}
@@ -78,12 +90,15 @@ export default function Navbar({ children, menuList }: ManagerProp) {
                         }
                     </div>
 
-                    <div className="flex items-center gap-3">
-                        <Link href={'/login'} className="flex items-center px-4 font-medium text-[#262626] ">
+                    <div className="items-center gap-3 flex">
+                        <Link href={'/signup'} className="items-center px-4 font-medium text-[#262626] hidden ">
                             <span>Sign Up</span>
                         </Link>
-                        <Link href={'/login'} className="flex items-center px-4 font-medium p-2 text-white primary rounded-lg">
+                        <Link href={'/login'} className="items-center px-4 font-medium p-2 text-white hidden primary rounded-lg">
                             <span>Sign In</span>
+                        </Link>
+                        <Link href={'/login'} className="flex items-center px-4 font-medium p-2 text-black rounded-lg" onClick={handleLogout}>
+                            <span>Logout</span>
                         </Link>
                     </div>
 
