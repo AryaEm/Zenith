@@ -111,7 +111,7 @@ export default function SidebarAdmin() {
                 {/* menu section */}
 
 
-                <div className="p-4 pb-20">
+                <div className="p-4 pb-14">
                     <button className="w-full py-2 px-4 bg-biru hover:bg-blue-700 rounded text-white">
                         Upload Game
                     </button>

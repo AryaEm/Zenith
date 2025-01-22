@@ -1,3 +1,6 @@
+import TesProfile from "../../../public/image/mici.jpg"
+import Image from "next/image"
+
 export default function WelcomeAdmin() {
     return (
         <>
@@ -6,8 +9,10 @@ export default function WelcomeAdmin() {
                     <p className="text-white font-medium text-2xl">Welcome back, Arya</p>
                     <p className="text-[#AEB9E1] text-sm">Measure your advertising ROI and report website traffic.</p>
                 </div>
-                
-                <div className="border-2 h-16 w-16 rounded-full bg-zinc-400"></div>
+
+                <div className="h-16 w-16 rounded-full">
+                    <Image src={TesProfile} alt="tes profl" className="h-full w-full object-cover object-[120%] rounded-full"></Image>
+                </div>
             </div>
         </>
     )

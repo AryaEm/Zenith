@@ -96,7 +96,6 @@ export default function Navbar({ children, menuList }: ManagerProp) {
                                     key={`keyMenu${index}`} />
                             ))
                         }
-                        <div className="flex-1 cursor-pointer font-medium text-white text-lg p-3">Add Game</div>
                     </div>
 
                     <div className="items-center gap-3 flex">

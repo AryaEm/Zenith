@@ -1,5 +1,5 @@
 import Image from "next/image"
-import inisponsor from "../../../public/image/Frame 62.svg"
+import inisponsor from "../../../public/image/Mask group.png"
 
 export default function Sponsor() {
     return(
