@@ -72,10 +72,10 @@ export default function SignUp() {
 
 
                                 <div className="my-10 flex gap-2 sfprodisplay text-sm">
-                                    {/* <button type="submit" className="bg-[#323644] hover:bg-primary w-1/2 p-3 font-medium rounded-md text-white">
+                                    <button type="submit" className="bg-[#323644] hover:bg-primary w-1/2 p-3 font-medium rounded-md text-white">
                                         Change Method
-                                    </button> */}
-                                    <button type="submit" className="bg-[#007AFF] hover:bg-primary w-full p-3 font-medium rounded-md text-white">
+                                    </button>
+                                    <button type="submit" className="bg-[#007AFF] hover:bg-primary w-1/2 p-3 font-medium rounded-md text-white">
                                         Create Account
                                     </button>
                                 </div>

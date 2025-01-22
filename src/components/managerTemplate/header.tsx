@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Profil from "../../../public/image/gaming.svg"
-import decoration1 from "../../../public/image/Abstract Line.svg"
-import decoration2 from "../../../public/image/Fill 1.svg"
+import decoration1 from "../../../public/image/Abstract Line2.png"
+import decoration2 from "../../../public/image/Fill.svg"
 import { IoGameController } from "react-icons/io5";
 import { RiUserCommunityFill } from "react-icons/ri";
 import { GetStartedBtn } from "../button";
@@ -12,17 +12,17 @@ import { GetStartedBtn } from "../button";
 export default function Header() {
     return (
         <>
-            <div className="flex">
+            <div className="flex primary">
 
-                <div className="w-1/2 h-dvh flex items-center justify-center relative">
+                <div className="w-1/2 h-dvh flex items-center justify-center relative ">
                     <div className="h-80 w-80 bg-[#007AFF] absolute left-0 rounded-full bg-opacity-15 blur-3xl"></div>
                     <div className="h-80 w-80 bg-[#007AFF] absolute -right-32 bottom-0 rounded-full bg-opacity-10 blur-3xl"></div>
-                    <div className="w-fit mx-10 h-fit relative z-[2] ">
+                    <div className="w-fit mx-10 h-fit relative z-[2]">
                         <div className="w-16 h-16 absolute -top-4 -left-10">
                             <Image src={decoration1} alt="Abstract line" />
                         </div>
-                        <p className="font-bold text-6xl sfprodisplay leading-[4.5rem] text-[#262626]">Discover and buy <br />the latest games <br />for all platforms</p>
-                        <p className="sfprodisplay py-2 mb-2 text-[#262626] text-opacity-80">Start Your Gamer Journey with Us! Play New Game, Master <br />Your Skill, and Achieve Your Dreams with the Best Game <br />Shop Platform.</p>
+                        <p className="font-bold text-6xl sfprodisplay leading-[4.5rem] text-white text-opacity-80">Discover and buy <br />the latest games <br />for all platforms</p>
+                        <p className="sfprodisplay py-2 mb-2 text-white text-opacity-80">Start Your Gamer Journey with Us! Play New Game, Master <br />Your Skill, and Achieve Your Dreams with the Best Game <br />Shop Platform.</p>
                         <GetStartedBtn type="button" >
                             Get Started
                         </GetStartedBtn>
@@ -43,7 +43,7 @@ export default function Header() {
                         <div className="w-40 h-[70px] border rounded-2xl bg-white top-14 -left-14 absolute border-[#007AFF] custom-shadow">
                             <div className="flex h-full">
                                 <div className="h-full w-[40%] flex items-center justify-center">
-                                    <div className="h-10 w-10 primary rounded-xl flex items-center justify-center">
+                                    <div className="h-10 w-10 bg-[#007AFF] rounded-xl flex items-center justify-center">
                                         <IoGameController className="text-white h-6 w-6" />
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@ export default function Header() {
                         <div className="w-40 h-[70px] border rounded-2xl bg-white bottom-4 right-8 absolute border-[#007AFF] custom-shadow">
                             <div className="flex h-full">
                                 <div className="h-full w-[40%] flex items-center justify-center">
-                                    <div className="h-10 w-10 primary rounded-xl flex items-center justify-center">
+                                    <div className="h-10 w-10 bg-[#007AFF] rounded-xl flex items-center justify-center">
                                         <RiUserCommunityFill className="text-white h-6 w-6" />
                                     </div>
                                 </div>

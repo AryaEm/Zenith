@@ -12,7 +12,15 @@
 }
 
 .primary {
-  background-color: #007aff;
+  background-color: #282a37;
+}
+
+.bg-biru {
+  background-color: #007AFF;
+}
+
+.text-biru {
+  color: #007AFF;
 }
 
 .textprimary {
@@ -93,11 +101,16 @@
 .grad-login {
   background: rgb(39, 42, 55);
   background: linear-gradient(
-    80deg,
-    rgba(39, 42, 55, 1) 45%,
+    65deg,
+    rgba(39, 42, 55, 1) 47%,
     rgba(39, 42, 55, 0.61) 95%
   );
 }
 
 .gamelistshadow {
-  box-shadow: rgba(0, 0, 0, 0.200) 0px 18px 50px -10px;}
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+
+.bukan-hitam {
+  background-color: #252732;
+}

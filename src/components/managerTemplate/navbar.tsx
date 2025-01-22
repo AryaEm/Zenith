@@ -1,11 +1,11 @@
 "use client"
 
-import { ReactNode } from "react"
+import { ReactNode, useEffect, useState } from "react"
 // import Image from "next/image"
 import MenuItem from "./menuItem"
 import { IoSearchOutline } from "react-icons/io5";
 import Link from "next/link";
-import { removeCookie } from "@/lib/client-cookie"
+import { removeCookie, getCookie } from "@/lib/client-cookie"
 import { useRouter } from "next/navigation";
 
 type MenuType = {
@@ -22,12 +22,20 @@ type ManagerProp = {
 
 export default function Navbar({ children, menuList }: ManagerProp) {
     const router = useRouter()
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const token = getCookie("token"); // Ambil token dari cookie
+        setIsLoggedIn(!!token); // Set status login berdasarkan keberadaan token
+    }, []);
 
     const handleLogout = () => {
         removeCookie("token")
         removeCookie("id")
         removeCookie("name")
         removeCookie("role")
+        removeCookie("no_telp")
+        setIsLoggedIn(false); // Update state ke tidak login
         router.replace(`/login`)
     };
 
@@ -53,13 +61,13 @@ export default function Navbar({ children, menuList }: ManagerProp) {
             </div> */}
 
 
-            <div className="flex items-center fixed z-[999] w-full h-16 justify-center bg-[#fcfcfc]">
+            <div className="flex items-center fixed z-[999] w-full h-16 justify-center primary">
 
                 {/* logo section */}
                 <div className="w-fit ml-14 p-2 flex items-center gap-3">
                     <div className="bg-slate-400 w-8 h-8"></div>
                     <div className="border-green-800 flex items-center">
-                        <p className="text-[262626] font-semibold playfair text-3xl">Zenith</p>
+                        <p className="text-white font-semibold playfair text-3xl">Zenith</p>
                     </div>
                 </div>
                 {/* end logo section */}
@@ -71,7 +79,7 @@ export default function Navbar({ children, menuList }: ManagerProp) {
                     <input
                         type="search"
                         placeholder="Search"
-                        className="w-full h-10 pl-10 pr-4 rounded-xl bg-transparent border-2 border-zinc-300 text-gray-900 placeholder-gray-500"
+                        className="w-full h-10 pl-10 pr-4 rounded-xl bg-transparent border-2 border-[#f5f5f5] border-opacity-20 text-gray-900 placeholder-gray-500"
                     />
                 </div>
                 {/* end Search bar section */}
@@ -79,7 +87,7 @@ export default function Navbar({ children, menuList }: ManagerProp) {
 
                 {/* menu section */}
                 <div className="w-fit hidden md:flex ml-auto mr-14">
-                    <div className="px-5 flex">
+                    <div className="px-5 flex" >
                         {
                             menuList.map((menu, index) => (
                                 <MenuItem
@@ -88,18 +96,21 @@ export default function Navbar({ children, menuList }: ManagerProp) {
                                     key={`keyMenu${index}`} />
                             ))
                         }
+                        <div className="flex-1 cursor-pointer font-medium text-white text-lg p-3">Add Game</div>
                     </div>
 
                     <div className="items-center gap-3 flex">
-                        <Link href={'/signup'} className="items-center px-4 font-medium text-[#262626] hidden ">
-                            <span>Sign Up</span>
-                        </Link>
-                        <Link href={'/login'} className="items-center px-4 font-medium p-2 text-white hidden primary rounded-lg">
-                            <span>Sign In</span>
-                        </Link>
-                        <Link href={'/login'} className="flex items-center px-4 font-medium p-2 text-black rounded-lg" onClick={handleLogout}>
+                        {!isLoggedIn && (<>
+                            <Link href={'/signup'} className="items-center px-4 font-medium text-white ">
+                                <span>Sign Up</span>
+                            </Link>
+                            <Link href={'/login'} className="items-center px-4 font-medium p-2 text-white bg-[#007AFF] rounded-lg">
+                                <span>Sign In</span>
+                            </Link>
+                        </>)}
+                        {isLoggedIn && (<Link href={'/login'} className="flex items-center px-4 font-medium p-2 text-white bg-red-500 rounded-lg" onClick={handleLogout}>
                             <span>Logout</span>
-                        </Link>
+                        </Link>)}
                     </div>
 
                 </div>

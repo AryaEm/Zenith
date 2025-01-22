@@ -14,13 +14,13 @@ const FAQ = () => {
     ];
 
     return (
-        <div className="h-fit pb-20 flex flex-col items-center w-full">
+        <div className="h-fit pb-20 flex flex-col items-center w-full primary">
             <div className="w-4/5 mt-10">
-                <h2 className="text-3xl font-bold sfprodisplay tracking-wide text-center">Frequently Asked <br />Questions</h2>
+                <h2 className="text-3xl font-bold sfprodisplay text-white tracking-wide text-center">Frequently Asked <br />Questions</h2>
             </div>
 
             <div className="flex w-4/5 gap-8 relative">
-                <div className="w-1/2 h-fit my-10 grid grid-cols-1 md:grid gap-8 ">
+                <div className="w-1/2 h-fit my-10 grid grid-cols-1 md:grid gap-8">
                     {faqItems1.map((item, index) => (
                         <FAQItem key={index} question={item.question} answer={item.answer} />
                     ))}

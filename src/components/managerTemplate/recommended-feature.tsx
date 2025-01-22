@@ -5,10 +5,10 @@ import { AddToCartBtn } from "../button"
 export default function RecommendedFeature() {
     return (
         <>
-            <div className="h-[95dvh] bg-[#fcfcfc] flex flex-col items-center sfprodisplay">
+            <div className="h-[95dvh] primary flex flex-col items-center sfprodisplay">
                 <div className="w-[45%] h-[10%] flex items-center flex-col my-4">
-                    <p className="sfprodisplay text-[#252525] text-opacity-60 tracking-wide text-lg">Featured</p>
-                    <p className="sfprodisplay text-[#242F3A] text-2xl font-semibold tracking-wide">Recommended Games</p>
+                    <p className="sfprodisplay text-white text-opacity-60 tracking-wide text-lg">Featured</p>
+                    <p className="sfprodisplay text-white text-2xl font-semibold tracking-wide">Recommended Games</p>
                 </div>
 
                 <div className="w-[65%] h-[70%] my-5 flex overflow-x-scroll rounded-xl scrollbar-hide">

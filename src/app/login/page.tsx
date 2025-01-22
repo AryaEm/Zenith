@@ -37,8 +37,8 @@ const SignInPage = () => {
                 storeCookie("role", data.data.role)
                 storeCookie("no_telp", data.data.no_telp)
                 const role = data.data.role
-                if (role === `Admin`) setTimeout(() => router.replace(`/`), 300)
-                else if (role === `Pelanggan`) setTimeout(() => router.replace(`/cashier/dashboard`), 300)
+                if (role === `Admin`) setTimeout(() => router.replace(`/admin/dashboard`), 300)
+                else if (role === `Pelanggan`) setTimeout(() => router.replace(`/`), 300)
             }
             else toast(data.message, { hideProgressBar: true, containerId: 'toastLogin', type: "warning" })
         }
