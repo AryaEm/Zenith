@@ -36,7 +36,7 @@ export default function Navbar({ children, menuList }: ManagerProp) {
         removeCookie("role")
         removeCookie("no_telp")
         setIsLoggedIn(false); // Update state ke tidak login
-        router.replace(`/login`)
+        router.replace(`/auth`)
     };
 
     // const [isSidebarVisible, setSidebarVisible] = useState(false)
@@ -100,10 +100,10 @@ export default function Navbar({ children, menuList }: ManagerProp) {
 
                     <div className="items-center gap-3 flex">
                         {!isLoggedIn && (<>
-                            <Link href={'/signup'} className="items-center px-4 font-medium text-white ">
+                            <Link href={'/auth'} className="items-center px-4 font-medium text-white ">
                                 <span>Sign Up</span>
                             </Link>
-                            <Link href={'/login'} className="items-center px-4 font-medium p-2 text-white bg-[#007AFF] rounded-lg">
+                            <Link href={'/auth'} className="items-center px-4 font-medium p-2 text-white bg-[#007AFF] rounded-lg">
                                 <span>Sign In</span>
                             </Link>
                         </>)}

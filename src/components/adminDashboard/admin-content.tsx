@@ -1,8 +1,19 @@
 "use client"
 
 import WelcomeAdmin from "./welcome-admin"
+import { FiArrowDownLeft, FiArrowUpRight } from "react-icons/fi";
+import { FaDollarSign } from "react-icons/fa6";
 import { Line } from "react-chartjs-2";
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend, } from "chart.js"
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Tooltip,
+    Legend,
+    TooltipItem,
+} from "chart.js";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend);
 
@@ -19,21 +30,20 @@ export default function AdminContent() {
         datasets: [
             {
                 label: "Revenue",
-                data: [5000, 15000, 20000, 30000, 50000, 125200, 150000, 200000, 175000, 150000, 225000, 240800],
+                data: [5000, 25000, 50000, 90000, 130000, 128000, 150000, 180000, 210000, 220000, 225000, 240800],
                 borderColor: "#8B5CF6",
                 backgroundColor: "rgba(139, 92, 246, 0.1)",
                 tension: 0.4,
-                pointRadius: 4,
+                pointRadius: 1,
                 pointHoverRadius: 6,
-                fill: true,
             },
             {
                 label: "Expenses",
-                data: [10000, 20000, 15000, 25000, 40000, 75000, 100000, 180000, 160000, 120000, 200000, 210000],
+                data: [50000, 80000, 35000, 120000, 90000, 100000, 190000, 200000, 140000, 100000, 112000, 150000],
                 borderColor: "#38BDF8",
                 backgroundColor: "rgba(56, 189, 248, 0.1)",
                 tension: 0.4,
-                pointRadius: 4,
+                pointRadius: 1,
                 pointHoverRadius: 6,
                 fill: true,
             },
@@ -52,8 +62,8 @@ export default function AdminContent() {
             },
             tooltip: {
                 callbacks: {
-                    label: (context: any) => {
-                        return `$${context.raw.toLocaleString()} (${context.dataset.label})`;
+                    label: (context: TooltipItem<'line'>) => {
+                        return `$${context.raw?.toLocaleString()} (${context.dataset.label})`;
                     },
                 },
             },
@@ -80,6 +90,7 @@ export default function AdminContent() {
                 grid: {
                     color: "rgba(255, 255, 255, 0.1)",
                 },
+                fill: true,
             },
         },
     };
@@ -99,10 +110,12 @@ export default function AdminContent() {
                             <div className="w-full flex items-center gap-4 py-1">
                                 <div className="text-2xl font-bold">{card.value}</div>
                                 <div
-                                    className={`text-sm font-medium px-2 border border-opacity-20 rounded-md ${card.changeType === "positive" ? "text-[#14CA74] border-[#05C168] bg-[#05C168] bg-opacity-20" : "text-[#FF5A65] border-[#FF5A65] bg-[#FF5A65] bg-opacity-20"
+                                    className={`text-sm flex items-center gap-1 font-medium px-2 py-[0.10rem] border border-opacity-20 rounded-md ${card.changeType === "positive" ? "text-[#14CA74] border-[#05C168] bg-[#05C168] bg-opacity-20" : "text-[#FF5A65] border-[#FF5A65] bg-[#FF5A65] bg-opacity-20"
                                         }`}
                                 >
                                     {card.change}
+                                    <FiArrowDownLeft className={`${card.changeType === "positive" ? "hidden" : "block"}`} />
+                                    <FiArrowUpRight className={`${card.changeType === "positive" ? "block" : "hidden"}`} />
                                 </div>
                             </div>
                         </div>
@@ -110,8 +123,11 @@ export default function AdminContent() {
                 </div>
 
                 <div className="bg-[#212430] w-full h-[72%] border border-[#343B4F] rounded-lg p-6">
-                    <h3 className="text-white text-lg font-semibold">Total Revenue</h3>
-                    <p className="text-green-400 text-sm">+24.6%</p>
+                    <h3 className="text-[#AEB9E1] text-sm font-semibold mb-2">Total Revenue</h3>
+                    <div className="flex gap-4 sfprodisplay items-center">
+                        <p className="text-white text-xl font-semibold flex items-center"><FaDollarSign className="text-2xl"></FaDollarSign> 240.8K</p>
+                        <p className="text-[#14CA74] bg-[#05C168] bg-opacity-20 border-[#05C168] border-opacity-20 border px-2 py-[0.10rem] rounded-md text-sm flex gap-1 items-center">+24.6% <FiArrowUpRight></FiArrowUpRight></p>
+                    </div>
                     <div className="h-[85%]">
                         <Line data={data} options={options} />
                     </div>

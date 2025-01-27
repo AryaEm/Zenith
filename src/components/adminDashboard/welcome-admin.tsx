@@ -10,7 +10,7 @@ export default function WelcomeAdmin() {
                     <p className="text-[#AEB9E1] text-sm">Measure your advertising ROI and report website traffic.</p>
                 </div>
 
-                <div className="h-16 w-16 rounded-full">
+                <div className="h-16 w-16 rounded-full cursor-pointer">
                     <Image src={TesProfile} alt="tes profl" className="h-full w-full object-cover object-[120%] rounded-full"></Image>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import { useState } from "react"
 import { FaAngleUp, FaAngleDown, FaStar, FaDollarSign, FaUser } from "react-icons/fa6";
 import { RiHomeFill } from "react-icons/ri";
 import { FaCog } from "react-icons/fa";
+import Link from "next/link";
 
 export default function SidebarAdmin() {
     const [manageOpen, setManageOpen] = useState(false);
@@ -16,14 +17,14 @@ export default function SidebarAdmin() {
             <div className="h-dvh w-1/5 bg-[#212430] text-white flex flex-col">
 
                 {/* logo section */}
-                <div className="flex items-center h-16 playfair tracking-wide px-8">
-                    <h1 className="text-xl font-bold">ZENITH</h1>
+                <div className="flex items-center h-32 playfair tracking-wide px-8">
+                    <h1 className="text-xl font-bold"><Link href={'/'}>ZENITH</Link></h1>
                 </div>
                 {/* end logo section */}
 
 
                 {/* menu section */}
-                <div className="flex-grow p-6 pt-20">
+                <div className="flex-grow p-6">
                     <ul className="space-y-5 mb-8">
 
                         {/* manage  */}
