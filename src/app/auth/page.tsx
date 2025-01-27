@@ -5,7 +5,7 @@ import { storeCookie } from "@/lib/client-cookie"
 import axios from "axios"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { FormEvent, use, useState } from "react"
+import { FormEvent, useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
 import inilogo from "../../../public/image/among-us-6044191_960_720.webp"
 import { IoMdMail } from "react-icons/io";
@@ -14,7 +14,7 @@ import { FaLock } from "react-icons/fa6";
 import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
 import { FaUserNinja } from "react-icons/fa";
-import BgLogin from "../../../public/image/lockdown-protocol.jpg"
+// import BgLogin from "../../../public/image/lockdown-protocol.jpg"
 
 const SignInPage = () => {
     const [email, setEmail] = useState<string>("")
