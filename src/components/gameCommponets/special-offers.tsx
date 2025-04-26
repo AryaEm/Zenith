@@ -1,48 +1,48 @@
-import lockdown from "../../../public/image/lockdown-protocol.jpg"
+import Image from "next/image";
+import { IGame } from "@/app/types";
+import { getCookies } from "@/lib/server-cookis";
+import { BASE_API_URL, BASE_IMAGE_GAME } from "../../../global";
+import { get } from "@/lib/api-bridge";
+import { AlertInfo } from "../alert";
 
-export default function SpecialOffers() {
-    const trendingGames = [
-        {
-            id: 1,
-            title: "Delta Force",
-            description: "FPS, Massively Multiplayer, Free to Play, Adventure",
-            rank: "#01",
-            image: { lockdown },
-            price: "Free",
-        },
-        {
-            id: 2,
-            title: "Marvel Rivals",
-            description: "Third-Person Shooter, Moba, Free to Play, Adventure",
-            rank: "#02",
-            image: "path/to/marvel-rivals-image",
-            price: "Free",
-        },
-        {
-            id: 3,
-            title: "Genshin Impact",
-            description: "Adventure, Story, Roleplay, Waifuable jlr",
-            rank: "#03",
-            image: "path/to/genshin-impact-image",
-            price: "Free",
-        },
-        {
-            id: 4,
-            title: "Genshin ",
-            description: "Adventure, Story, Roleplay, Waifuable jlr",
-            rank: "#04",
-            image: "path/to/genshin-impact-image",
-            price: "Free",
-        },
-        {
-            id: 5,
-            title: "Genshin Impact",
-            description: "Adventure, Story, Roleplay, Waifuable jlr",
-            rank: "#05",
-            image: "path/to/genshin-impact-image",
-            price: "Free",
-        },
-    ];
+const getMostPurchasedGames = async (): Promise<IGame[]> => {
+    try {
+        const TOKEN = await getCookies("token");
+        console.log("Token:", TOKEN);  
+        const url = `${BASE_API_URL}/game/mostpurchased`;  
+        const { data } = await get(url, TOKEN);
+
+        // console.log("Response API:", data); // Tambahkan log ini untuk melihat data yang dikembalikan
+
+        let result: IGame[] = [];
+        if (data?.status) result = [...data.data];
+        return result;
+    } catch (error) {
+        console.log(error);
+        return [];
+    } 
+}; 
+
+export default async function SpecialOffers() {
+    const games: IGame[] = await getMostPurchasedGames();
+    // console.log("Games:", games); // Debugging untuk melihat apakah games ada datanya
+
+    const truncateDescription = (text: string, wordLimit: number = 8): string => {
+        const words = text.split(" ");
+        if (words.length > wordLimit) {
+            return words.slice(0, wordLimit).join(" ") + "...";
+        }
+        return text;
+    };
+
+    const truncateTitle = (text: string, wordLimit: number = 2): string => {
+        const words = text.split(" ");
+        if (words.length > wordLimit) {
+            return words.slice(0, wordLimit).join(" ") + "...";
+        }
+        return text;
+    };
+    
 
     return (
         <main className="blue-bg w-full h-[80dvh] sfprodisplay">
@@ -51,24 +51,43 @@ export default function SpecialOffers() {
                 <p className="font-medium tracking-wide text-2xl mb-3 text-white">Top Trending</p>
             </div>
 
-            <div className="h-[50%] w-full mt-16 border border-black gap-6 overflow-x-scroll">
-                <div className="h-full w-max gap-6 flex pl-20 ">
-                    {trendingGames.map((game) => (
-                        <div key={game.id} className="bg-white relative rounded-xl shadow-lg flex flex-col justify-between w-[380px] h-full">
-                            <div className="w-full h-[60%] rounded-t-xl bg-emerald-900"></div>
-                            <div className="w-full h-[45%] absolute bottom-0 rounded-xl bg-white p-3">
-                                <div className="h-[65%] w-full flex sfprodisplay">
-                                    <div className="w-[65%]">
-                                        <p className="font-semibold mb-2 text-lg">{game.title}</p>
-                                        <p className="font-normal text-base text-black leading-5 text-opacity-60">{game.description}</p>
+            <div className="h-fit w-full mt-16 gap-6 ini-scrollbar overflow-x-scroll">
+                <div className="h-fit w-max gap-6 flex pl-20 pr-20 mb-8">
+
+                    {games.length === 0 ? (
+                        <div className="w-full">
+                            <AlertInfo title="Informasi">No games available</AlertInfo>
+                        </div>
+                    ) : (
+                        games.map((game, index) => (
+                            <div key={game.id} className="bg-white cursor-pointer relative rounded-xl shadow-lg flex flex-col justify-between w-[380px] h-80">
+                                <div className="w-full h-[60%] rounded-t-xl overflow-hidden relative">
+                                    <Image
+                                        src={`${BASE_IMAGE_GAME}/${game.gambar}`}
+                                        alt={game.name}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        unoptimized
+                                    />
+                                </div>
+                                <div className="w-full h-[45%] absolute bottom-0 rounded-xl bg-white p-3 flex flex-col justify-between">
+                                    <div className="h-[65%] w-full flex sfprodisplay">
+                                        <div className="w-[65%]">
+                                            <p className="font-semibold mb-2 text-lg leading-6">{truncateTitle(game.name)}</p>
+                                            <p className="font-normal text-base text-black leading-5 text-opacity-60">
+                                                {truncateDescription(game.deskripsi)}
+                                            </p>
+                                        </div>
+                                        <p className="w-[35%] h-full flex items-center justify-center font-semibold text-3xl text-[#007AFF]">
+                                            #{index + 1}
+                                        </p>
                                     </div>
-                                    <p className="w-[35%] h-fu-full flex items-center justify-center font-semibold text-3xl text-[#007AFF]">
-                                        {game.rank}
-                                    </p>
+                                    <p className="text-sm text-gray-600">{game.total_dibeli}x purchased </p>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))
+                    )}
+
                 </div>
             </div>
         </main>

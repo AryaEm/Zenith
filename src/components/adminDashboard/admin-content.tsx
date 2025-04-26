@@ -97,7 +97,7 @@ export default function AdminContent() {
 
     return (
         <>
-            <div className="h-dvh w-4/5 py-8 px-12 relative">
+            <div className="h-dvh zzzw-4/5 py-8 px-12 relative">
                 <WelcomeAdmin></WelcomeAdmin>
 
                 <div className="h-fit w-full grid grid-cols-1 md:grid-cols-4 gap-6 mt-2 mb-5">

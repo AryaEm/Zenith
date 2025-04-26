@@ -1,4 +1,5 @@
 import React from "react"
+import { ToastContainer } from "react-toastify"
 
 export const metadata = {
     title: 'Login | Zenith',
@@ -11,7 +12,11 @@ type PropsLayout = {
 
 const RootLayout = ({ children }: PropsLayout) => {
     return (
-        <div>{children}</div>
+        <div>
+            {children}
+            <ToastContainer containerId={`toastLogin`} />
+            <ToastContainer containerId={`toastRegister`} />
+        </div>
     )
 }
 

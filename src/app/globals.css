@@ -1,5 +1,6 @@
 @import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 @import url("https://fonts.cdnfonts.com/css/playfair-display");
+@import url('https://fonts.cdnfonts.com/css/aerospace');
 
 @tailwind base;
 @tailwind components;
@@ -9,6 +10,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.Aerospace {
+  font-family: 'Aerospace', sans-serif;
+
 }
 
 .primary {
@@ -95,14 +101,14 @@
 .bg-login {
   background-image: url(../../public/image/lockdown-protocol.jpg);
   object-fit: cover;
-  object-position: right;
+  object-position: left;
 }
 
 .grad-login {
   background: rgb(39, 42, 55);
   background: linear-gradient(
     65deg,
-    rgba(39, 42, 55, 1) 47%,
+    rgba(39, 42, 55, 1) 17%,
     rgba(39, 42, 55, 0.61) 95%
   );
 }
@@ -113,4 +119,17 @@
 
 .bukan-hitam {
   background-color: #252732;
+}
+
+.ini-scrollbar::-webkit-scrollbar {
+  height: 15px;
+}
+
+.ini-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #f5f5f5a8;
+  border-radius: 50px;
+}
+
+.ini-wrapper::-webkit-scrollbar-track{
+  display: none;
 }

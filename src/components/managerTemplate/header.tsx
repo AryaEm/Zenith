@@ -12,7 +12,7 @@ import { GetStartedBtn } from "../button";
 export default function Header() {
     return (
         <>
-            <div className="flex primary">
+            <div className="md:flex primary">
 
                 <div className="w-1/2 h-dvh flex items-center justify-center relative ">
                     <div className="h-80 w-80 bg-[#007AFF] absolute left-0 rounded-full bg-opacity-15 blur-3xl"></div>

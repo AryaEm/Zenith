@@ -14,20 +14,15 @@ export default function SidebarAdmin() {
 
     return (
         <>
-            <div className="h-dvh w-1/5 bg-[#212430] text-white flex flex-col">
+            <div className="h-dvh w-1/5 bg-[#212430] text-white lg:flex hidden flex-col">
 
-                {/* logo section */}
-                <div className="flex items-center h-32 playfair tracking-wide px-8">
-                    <h1 className="text-xl font-bold"><Link href={'/'}>ZENITH</Link></h1>
+                <div className="flex items-center h-32">
+                    <p className="text-white pl-8 font-normal Aerospace text-4xl"><Link href={'/'}>ZENITH</Link></p>
                 </div>
-                {/* end logo section */}
 
-
-                {/* menu section */}
                 <div className="flex-grow p-6">
                     <ul className="space-y-5 mb-8">
 
-                        {/* manage  */}
                         <li>
                             <button onClick={() => setManageOpen(!manageOpen)} className="flex items-center justify-between w-full text-left focus:outline-none text-[#AEB9E1] transition-all duration-300 hover:text-[#007AFF]">
                                 <div className="flex items-center gap-2">
@@ -45,10 +40,7 @@ export default function SidebarAdmin() {
                                 </ul>
                             )}
                         </li>
-                        {/* manage  */}
 
-
-                        {/* feature  */}
                         <li>
                             <button onClick={() => setFeaturesOpen(!featuresOpen)} className="flex items-center justify-between text-[#AEB9E1] w-full text-left focus:outline-none transition-all duration-300 hover:text-[#007AFF]">
                                 <div className="flex items-center gap-2">

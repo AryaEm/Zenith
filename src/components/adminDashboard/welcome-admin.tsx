@@ -1,4 +1,4 @@
-import TesProfile from "../../../public/image/mici.jpg"
+import TesProfile from "../../../public/image/gaming.svg"
 import Image from "next/image"
 
 export default function WelcomeAdmin() {
